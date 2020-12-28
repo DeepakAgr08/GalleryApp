@@ -3,17 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0DB504F8E3CD90CF6C816E72 /* Pods_GalleryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D0E7ADD9FDDD93867BE19E9 /* Pods_GalleryApp.framework */; };
 		C922605A2598F88100EFC702 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92260592598F88100EFC702 /* AppDelegate.swift */; };
 		C922605C2598F88100EFC702 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922605B2598F88100EFC702 /* SceneDelegate.swift */; };
-		C922605E2598F88100EFC702 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922605D2598F88100EFC702 /* ViewController.swift */; };
+		C922605E2598F88100EFC702 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922605D2598F88100EFC702 /* HomeViewController.swift */; };
 		C92260612598F88100EFC702 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C922605F2598F88100EFC702 /* Main.storyboard */; };
 		C92260632598F88300EFC702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C92260622598F88300EFC702 /* Assets.xcassets */; };
 		C92260662598F88300EFC702 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92260642598F88300EFC702 /* LaunchScreen.storyboard */; };
+		C92260872599B9C800EFC702 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92260862599B9C800EFC702 /* Constants.swift */; };
+		C922608B2599C0C000EFC702 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922608A2599C0C000EFC702 /* ListViewController.swift */; };
+		C922608E2599C0DB00EFC702 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922608D2599C0DB00EFC702 /* GridViewController.swift */; };
+		C92260922599CCD900EFC702 /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92260912599CCD900EFC702 /* GridViewCell.swift */; };
+		C92260952599CCF800EFC702 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92260942599CCF800EFC702 /* ListViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +28,16 @@
 		C92260562598F88100EFC702 /* GalleryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalleryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92260592598F88100EFC702 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C922605B2598F88100EFC702 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C922605D2598F88100EFC702 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C922605D2598F88100EFC702 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C92260602598F88100EFC702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C92260622598F88300EFC702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C92260652598F88300EFC702 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C92260672598F88300EFC702 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C92260862599B9C800EFC702 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C922608A2599C0C000EFC702 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		C922608D2599C0DB00EFC702 /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
+		C92260912599CCD900EFC702 /* GridViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewCell.swift; sourceTree = "<group>"; };
+		C92260942599CCF800EFC702 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +66,6 @@
 				7ED3860BA2FC0FDE834FA84B /* Pods-GalleryApp.debug.xcconfig */,
 				898F07E3187683856771D72A /* Pods-GalleryApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,13 +90,18 @@
 		C92260582598F88100EFC702 /* GalleryApp */ = {
 			isa = PBXGroup;
 			children = (
+				C922605F2598F88100EFC702 /* Main.storyboard */,
 				C92260592598F88100EFC702 /* AppDelegate.swift */,
 				C922605B2598F88100EFC702 /* SceneDelegate.swift */,
-				C922605D2598F88100EFC702 /* ViewController.swift */,
-				C922605F2598F88100EFC702 /* Main.storyboard */,
+				C922605D2598F88100EFC702 /* HomeViewController.swift */,
+				C922608A2599C0C000EFC702 /* ListViewController.swift */,
+				C92260942599CCF800EFC702 /* ListViewCell.swift */,
+				C922608D2599C0DB00EFC702 /* GridViewController.swift */,
+				C92260912599CCD900EFC702 /* GridViewCell.swift */,
 				C92260622598F88300EFC702 /* Assets.xcassets */,
 				C92260642598F88300EFC702 /* LaunchScreen.storyboard */,
 				C92260672598F88300EFC702 /* Info.plist */,
+				C92260862599B9C800EFC702 /* Constants.swift */,
 			);
 			path = GalleryApp;
 			sourceTree = "<group>";
@@ -206,9 +220,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C922605E2598F88100EFC702 /* ViewController.swift in Sources */,
+				C922605E2598F88100EFC702 /* HomeViewController.swift in Sources */,
+				C92260922599CCD900EFC702 /* GridViewCell.swift in Sources */,
 				C922605A2598F88100EFC702 /* AppDelegate.swift in Sources */,
+				C922608E2599C0DB00EFC702 /* GridViewController.swift in Sources */,
+				C92260952599CCF800EFC702 /* ListViewCell.swift in Sources */,
 				C922605C2598F88100EFC702 /* SceneDelegate.swift in Sources */,
+				C922608B2599C0C000EFC702 /* ListViewController.swift in Sources */,
+				C92260872599B9C800EFC702 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
