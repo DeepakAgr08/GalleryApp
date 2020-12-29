@@ -19,6 +19,10 @@
 		C922608E2599C0DB00EFC702 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C922608D2599C0DB00EFC702 /* GridViewController.swift */; };
 		C92260922599CCD900EFC702 /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92260912599CCD900EFC702 /* GridViewCell.swift */; };
 		C92260952599CCF800EFC702 /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92260942599CCF800EFC702 /* ListViewCell.swift */; };
+		C92260A5259A2A2B00EFC702 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92260A4259A2A2B00EFC702 /* NetworkManager.swift */; };
+		C92260A8259A2BD900EFC702 /* NetworkRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92260A7259A2BD900EFC702 /* NetworkRequestProtocol.swift */; };
+		C92260AB259A2C1300EFC702 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92260AA259A2C1300EFC702 /* NetworkRequest.swift */; };
+		C92260AE259A333F00EFC702 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92260AD259A333F00EFC702 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		C922608D2599C0DB00EFC702 /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		C92260912599CCD900EFC702 /* GridViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewCell.swift; sourceTree = "<group>"; };
 		C92260942599CCF800EFC702 /* ListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
+		C92260A4259A2A2B00EFC702 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C92260A7259A2BD900EFC702 /* NetworkRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestProtocol.swift; sourceTree = "<group>"; };
+		C92260AA259A2C1300EFC702 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		C92260AD259A333F00EFC702 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,10 @@
 				C92260642598F88300EFC702 /* LaunchScreen.storyboard */,
 				C92260672598F88300EFC702 /* Info.plist */,
 				C92260862599B9C800EFC702 /* Constants.swift */,
+				C92260A4259A2A2B00EFC702 /* NetworkManager.swift */,
+				C92260A7259A2BD900EFC702 /* NetworkRequestProtocol.swift */,
+				C92260AA259A2C1300EFC702 /* NetworkRequest.swift */,
+				C92260AD259A333F00EFC702 /* Photo.swift */,
 			);
 			path = GalleryApp;
 			sourceTree = "<group>";
@@ -220,6 +232,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92260AE259A333F00EFC702 /* Photo.swift in Sources */,
+				C92260A5259A2A2B00EFC702 /* NetworkManager.swift in Sources */,
 				C922605E2598F88100EFC702 /* HomeViewController.swift in Sources */,
 				C92260922599CCD900EFC702 /* GridViewCell.swift in Sources */,
 				C922605A2598F88100EFC702 /* AppDelegate.swift in Sources */,
@@ -227,6 +241,8 @@
 				C92260952599CCF800EFC702 /* ListViewCell.swift in Sources */,
 				C922605C2598F88100EFC702 /* SceneDelegate.swift in Sources */,
 				C922608B2599C0C000EFC702 /* ListViewController.swift in Sources */,
+				C92260AB259A2C1300EFC702 /* NetworkRequest.swift in Sources */,
+				C92260A8259A2BD900EFC702 /* NetworkRequestProtocol.swift in Sources */,
 				C92260872599B9C800EFC702 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

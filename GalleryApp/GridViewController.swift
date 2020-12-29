@@ -11,8 +11,8 @@ private let reuseIdentifier = "gridViewCell"
 
 class GridViewController: UICollectionViewController {
     
-    private let sectionInsets = UIEdgeInsets(top: 20.0, left: 12.0, bottom: 50.0, right: 12.0)
-    private let itemsPerRow: CGFloat = 3
+    var photos:[Photo] = []
+    let networkManager = NetworkManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,14 @@ class GridViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Do any additional setup after loading the view.
+        collectionView.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.RawValue(UInt8(UIView.AutoresizingMask.flexibleWidth.rawValue) | UInt8(UIView.AutoresizingMask.flexibleHeight.rawValue)))
+        
+        networkManager.getPhotos{(photoList) in
+            self.photos = photoList
+            self.collectionView.reloadData()
+        }
     }
+    
 
     /*
     // MARK: - Navigation
@@ -43,14 +50,14 @@ class GridViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 3
+        return self.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GridViewCell
         
         // Configure the cell
-    
+        cell.photo = self.photos[indexPath.item]
         return cell
     }
 
@@ -90,18 +97,22 @@ class GridViewController: UICollectionViewController {
 // MARK: - Collection View Flow Layout Delegate
 extension GridViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
+        let width = collectionView.frame.width
         
-        return CGSize(width: widthPerItem, height: widthPerItem)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
+        return CGSize(width: width/3 - 1, height: width/3 - 1)
+//        if UIDevice.current.orientation.isPortrait {
+//            return CGSize(width: width/3 - 1, height: width/3 - 1)
+//        } else {
+//            return CGSize(width: width/5 - 1, height: width/5 - 1)
+//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsets.left
+        return 1.0
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+    
 }

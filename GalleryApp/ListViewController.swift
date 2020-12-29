@@ -8,6 +8,9 @@
 import UIKit
 
 class ListViewController: UITableViewController {
+    
+    var photos:[Photo] = []
+    let networkManager = NetworkManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +20,11 @@ class ListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        networkManager.getPhotos{(photoList) in
+            self.photos = photoList
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
@@ -28,14 +36,15 @@ class ListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return self.photos.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "listViewCell", for: indexPath) as! ListViewCell
 
         // Configure the cell...
+        cell.photo = self.photos[indexPath.row]
 
         return cell
     }

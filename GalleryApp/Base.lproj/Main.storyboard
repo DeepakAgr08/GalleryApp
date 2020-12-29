@@ -70,7 +70,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yvB-uu-cjC">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yvB-uu-cjC">
                             <size key="itemSize" width="180" height="180"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -87,50 +87,18 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qv5-Kc-BGJ">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                         </imageView>
-                                        <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uoj-NK-yy9">
-                                            <rect key="frame" x="0.0" y="123.5" width="180" height="56.5"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBo-hx-uxf">
-                                                    <rect key="frame" x="8" y="8" width="164" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSn-Xm-rHN">
-                                                    <rect key="frame" x="8" y="34" width="164" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstItem="RSn-Xm-rHN" firstAttribute="top" secondItem="IBo-hx-uxf" secondAttribute="bottom" constant="8" id="5YR-vw-Ucx"/>
-                                                <constraint firstItem="IBo-hx-uxf" firstAttribute="leading" secondItem="uoj-NK-yy9" secondAttribute="leading" constant="8" id="KmQ-WF-r6R"/>
-                                                <constraint firstAttribute="trailing" secondItem="IBo-hx-uxf" secondAttribute="trailing" constant="8" id="QJJ-am-5sx"/>
-                                                <constraint firstAttribute="bottom" secondItem="RSn-Xm-rHN" secondAttribute="bottom" constant="8" id="cPc-pS-kbX"/>
-                                                <constraint firstAttribute="trailing" secondItem="RSn-Xm-rHN" secondAttribute="trailing" constant="8" id="eBI-xL-rvR"/>
-                                                <constraint firstItem="RSn-Xm-rHN" firstAttribute="leading" secondItem="uoj-NK-yy9" secondAttribute="leading" constant="8" id="f3n-cG-c0n"/>
-                                                <constraint firstItem="IBo-hx-uxf" firstAttribute="top" secondItem="uoj-NK-yy9" secondAttribute="top" constant="8" id="pad-OY-OHM"/>
-                                            </constraints>
-                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="uoj-NK-yy9" firstAttribute="leading" secondItem="PPH-Ri-qRU" secondAttribute="leading" id="6lY-fO-axo"/>
                                         <constraint firstItem="Qv5-Kc-BGJ" firstAttribute="top" secondItem="PPH-Ri-qRU" secondAttribute="top" id="9MP-sp-Lhx"/>
                                         <constraint firstItem="Qv5-Kc-BGJ" firstAttribute="leading" secondItem="PPH-Ri-qRU" secondAttribute="leading" id="GTz-ur-Zfu"/>
-                                        <constraint firstAttribute="bottom" secondItem="uoj-NK-yy9" secondAttribute="bottom" id="MCt-O6-gcN"/>
                                         <constraint firstAttribute="bottom" secondItem="Qv5-Kc-BGJ" secondAttribute="bottom" id="S8F-pI-voM"/>
                                         <constraint firstAttribute="trailing" secondItem="Qv5-Kc-BGJ" secondAttribute="trailing" id="vRs-5F-sgj"/>
-                                        <constraint firstAttribute="trailing" secondItem="uoj-NK-yy9" secondAttribute="trailing" id="xgm-iT-RiL"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <size key="customSize" width="180" height="180"/>
                                 <connections>
-                                    <outlet property="dateLabel" destination="RSn-Xm-rHN" id="A8Q-RD-cxT"/>
                                     <outlet property="photoImageView" destination="Qv5-Kc-BGJ" id="BjO-Mo-nWr"/>
-                                    <outlet property="titleLabel" destination="IBo-hx-uxf" id="dyu-jO-zzo"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
