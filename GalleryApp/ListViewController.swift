@@ -10,6 +10,7 @@ import UIKit
 class ListViewController: UITableViewController {
     
     var photos:[Photo] = []
+    var indexPath:IndexPath = IndexPath()
     let networkManager = NetworkManager()
 
     override func viewDidLoad() {
@@ -24,6 +25,14 @@ class ListViewController: UITableViewController {
         networkManager.getPhotos{(photoList) in
             self.photos = photoList
             self.tableView.reloadData()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "photoPreviewSegue",
+            let vc = segue.destination as? PhotoPreviewViewController{
+            vc.photos = self.photos
+            vc.index = self.indexPath
         }
     }
 
@@ -51,6 +60,11 @@ class ListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(80.0)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.indexPath = indexPath
+        self.performSegue(withIdentifier: "photoPreviewSegue", sender: self)
     }
     
 

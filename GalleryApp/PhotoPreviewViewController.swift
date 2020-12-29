@@ -1,43 +1,33 @@
 //
-//  GridViewController.swift
+//  PhotoPreviewViewController.swift
 //  GalleryApp
 //
-//  Created by Deepak Agrawal on 28/12/20.
+//  Created by Deepak Agrawal on 29/12/20.
 //
 
 import UIKit
 
-private let reuseIdentifier = "gridViewCell"
+private let reuseIdentifier = "photoPreviewCell"
 
-class GridViewController: UICollectionViewController {
-    
+class PhotoPreviewViewController: UICollectionViewController {
+
     var photos:[Photo] = []
-    var indexPath:IndexPath = IndexPath()
-    let networkManager = NetworkManager()
-
+    var index:IndexPath = IndexPath()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
+        // Register cell classes
+        self.collectionView.register(PhotoPreviewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView.isPagingEnabled = false
+        self.collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+        self.collectionView.setNeedsLayout()
+        self.collectionView.isPagingEnabled = true
         // Do any additional setup after loading the view.
-        collectionView.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.RawValue(UInt8(UIView.AutoresizingMask.flexibleWidth.rawValue) | UInt8(UIView.AutoresizingMask.flexibleHeight.rawValue)))
-        
-        networkManager.getPhotos{(photoList) in
-            self.photos = photoList
-            self.collectionView.reloadData()
-        }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "photoPreviewSegue",
-            let vc = segue.destination as? PhotoPreviewViewController{
-            vc.photos = self.photos
-            vc.index = self.indexPath
-        }
-    }
-    
 
     /*
     // MARK: - Navigation
@@ -63,17 +53,11 @@ class GridViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! GridViewCell
-        
-        // Configure the cell
-        cell.photo = self.photos[indexPath.item]
-        return cell
-    }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoPreviewCell
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
-        self.indexPath = indexPath
-        self.performSegue(withIdentifier: "photoPreviewSegue", sender: self)
+        // Configure the cell
+        cell.imgView.af.setImage(withURL: self.photos[indexPath.item].flickrImageURL()!)
+        return cell
     }
 
     // MARK: UICollectionViewDelegate
@@ -110,24 +94,17 @@ class GridViewController: UICollectionViewController {
 }
 
 // MARK: - Collection View Flow Layout Delegate
-extension GridViewController : UICollectionViewDelegateFlowLayout {
+extension PhotoPreviewViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width
         
-        return CGSize(width: width/3 - 1, height: width/3 - 1)
-//        if UIDevice.current.orientation.isPortrait {
-//            return CGSize(width: width/3 - 1, height: width/3 - 1)
-//        } else {
-//            return CGSize(width: width/5 - 1, height: width/5 - 1)
-//        }
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1.0
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1.0
+        return 0
     }
-    
 }
