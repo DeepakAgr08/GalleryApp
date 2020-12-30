@@ -54,12 +54,7 @@ class ListViewController: UITableViewController {
 
         // Configure the cell...
         cell.photo = self.photos[indexPath.row]
-
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(80.0)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -9,8 +9,16 @@ import UIKit
 
 class GridViewCell: UICollectionViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
-//    @IBOutlet weak var titleLabel: UILabel!
-//    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel! {
+        didSet {
+            let dateFormatter = DateFormatter()
+
+                    dateFormatter.dateFormat = "dd/MM/yyyy"
+
+            self.dateLabel.text =  dateFormatter.string(from: Date())
+        }
+    }
     
     var photo:Photo? {
         // Runs every time the post variable is set
@@ -18,7 +26,7 @@ class GridViewCell: UICollectionViewCell {
         // make sure we return if post doesn't exist
            guard let photo = photo else { return }
            // Assign our UI elements to their post counterparts
-        //titleLabel.text = photo.title
+        titleLabel.text = photo.title
         
         guard let url = photo.flickrImageURL()
           else {
@@ -29,6 +37,7 @@ class GridViewCell: UICollectionViewCell {
         photoImageView.frame = self.bounds
        }
     }
+
     
 //    override func layoutSubviews() {
 //        super.layoutSubviews()

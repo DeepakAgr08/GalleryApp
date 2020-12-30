@@ -13,6 +13,15 @@ class ListViewCell: UITableViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    {
+        didSet {
+            let dateFormatter = DateFormatter()
+
+                    dateFormatter.dateFormat = "dd/MM/yyyy"
+
+            self.dateLabel.text =  dateFormatter.string(from: Date())
+        }
+    }
     
     var photo:Photo? {
         // Runs every time the post variable is set

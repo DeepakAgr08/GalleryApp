@@ -23,6 +23,8 @@
 		C92260AE259A333F00EFC702 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92260AD259A333F00EFC702 /* Photo.swift */; };
 		C92260B8259B3DB100EFC702 /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92260B7259B3DB000EFC702 /* PhotoPreviewViewController.swift */; };
 		C92260C1259B74B300EFC702 /* PhotoPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92260C0259B74B300EFC702 /* PhotoPreviewCell.swift */; };
+		C92260C4259B91FF00EFC702 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92260C3259B91FF00EFC702 /* KeyChain.swift */; };
+		C92260C7259B929B00EFC702 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92260C6259B929B00EFC702 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		C92260AD259A333F00EFC702 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		C92260B7259B3DB000EFC702 /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
 		C92260C0259B74B300EFC702 /* PhotoPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewCell.swift; sourceTree = "<group>"; };
+		C92260C3259B91FF00EFC702 /* KeyChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
+		C92260C6259B929B00EFC702 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,19 +105,21 @@
 				C922605F2598F88100EFC702 /* Main.storyboard */,
 				C92260592598F88100EFC702 /* AppDelegate.swift */,
 				C922605B2598F88100EFC702 /* SceneDelegate.swift */,
+				C92260C6259B929B00EFC702 /* LoginViewController.swift */,
 				C922605D2598F88100EFC702 /* HomeViewController.swift */,
 				C922608A2599C0C000EFC702 /* ListViewController.swift */,
 				C92260942599CCF800EFC702 /* ListViewCell.swift */,
 				C922608D2599C0DB00EFC702 /* GridViewController.swift */,
 				C92260912599CCD900EFC702 /* GridViewCell.swift */,
+				C92260B7259B3DB000EFC702 /* PhotoPreviewViewController.swift */,
+				C92260C0259B74B300EFC702 /* PhotoPreviewCell.swift */,
+				C92260A4259A2A2B00EFC702 /* NetworkManager.swift */,
+				C92260AD259A333F00EFC702 /* Photo.swift */,
+				C92260C3259B91FF00EFC702 /* KeyChain.swift */,
+				C92260862599B9C800EFC702 /* Constants.swift */,
 				C92260622598F88300EFC702 /* Assets.xcassets */,
 				C92260642598F88300EFC702 /* LaunchScreen.storyboard */,
 				C92260672598F88300EFC702 /* Info.plist */,
-				C92260862599B9C800EFC702 /* Constants.swift */,
-				C92260A4259A2A2B00EFC702 /* NetworkManager.swift */,
-				C92260AD259A333F00EFC702 /* Photo.swift */,
-				C92260B7259B3DB000EFC702 /* PhotoPreviewViewController.swift */,
-				C92260C0259B74B300EFC702 /* PhotoPreviewCell.swift */,
 			);
 			path = GalleryApp;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92260C7259B929B00EFC702 /* LoginViewController.swift in Sources */,
 				C92260AE259A333F00EFC702 /* Photo.swift in Sources */,
 				C92260C1259B74B300EFC702 /* PhotoPreviewCell.swift in Sources */,
 				C92260A5259A2A2B00EFC702 /* NetworkManager.swift in Sources */,
@@ -244,6 +251,7 @@
 				C922608B2599C0C000EFC702 /* ListViewController.swift in Sources */,
 				C92260B8259B3DB100EFC702 /* PhotoPreviewViewController.swift in Sources */,
 				C92260872599B9C800EFC702 /* Constants.swift in Sources */,
+				C92260C4259B91FF00EFC702 /* KeyChain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
