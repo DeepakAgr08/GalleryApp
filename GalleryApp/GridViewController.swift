@@ -115,11 +115,6 @@ extension GridViewController : UICollectionViewDelegateFlowLayout {
         let width = collectionView.frame.width
         
         return CGSize(width: width/3 - 1, height: width/3 - 1)
-//        if UIDevice.current.orientation.isPortrait {
-//            return CGSize(width: width/3 - 1, height: width/3 - 1)
-//        } else {
-//            return CGSize(width: width/5 - 1, height: width/5 - 1)
-//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

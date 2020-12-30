@@ -17,7 +17,7 @@ class ListViewCell: UITableViewCell {
         didSet {
             let dateFormatter = DateFormatter()
 
-                    dateFormatter.dateFormat = "dd/MM/yyyy"
+                    dateFormatter.dateFormat = Constants.Flickr.dateFormat
 
             self.dateLabel.text =  dateFormatter.string(from: Date())
         }

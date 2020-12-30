@@ -166,33 +166,5 @@ class NetworkManager {
             completionHandler(flickrData.photos.photo)
         }
     }
-    
-//    func getInfo(photoId:String, secret:String, completionHandler:@escaping(String) -> Void){
-//
-//        let request = AF.request("https://www.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=\(Constants.Flickr.key)&photo_id=\(photoId)&secret=\(secret)&format=json&nojsoncallback=1")
-//
-//
-//        request.response { (response) in
-//            //print(data)
-//            switch response.result {
-//            case .success(let data) :
-//                do{
-//                    let responseJson = try JSONSerialization.jsonObject(with: data!, options: [])
-//                    print(responseJson)
-//                    let responseDict = responseJson as? Dictionary<String,Any> ?? [:]
-//                    let photoDict = responseDict["photo"] as! Dictionary<String,Any>
-//                    let datesDict = photoDict["dates"] as! Dictionary<String,Any>
-//                    let date = datesDict["taken"] as! String
-//                    completionHandler(date)
-//                }catch {
-//                    print(Error.self)
-//                }
-//            case .failure(_):
-//                completionHandler("")
-//            }
-//
-//
-//        }
-        
 }
 
